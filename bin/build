@@ -5,6 +5,9 @@ set -e
 
 echo "Building React app..."
 cd client
+
+# Use the npm from the Heroku Node.js buildpack
+export PATH="/app/.heroku/node/bin:$PATH"
 npm install
 npm run build
 cd ..
