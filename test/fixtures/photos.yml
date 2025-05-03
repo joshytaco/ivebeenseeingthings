@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  camera: MyString
+  lens: MyString
+  aperture: MyString
+  shutter_speed: MyString
+  iso: MyString
+  date_taken: 2025-05-02 22:27:57
+
+two:
+  title: MyString
+  description: MyText
+  camera: MyString
+  lens: MyString
+  aperture: MyString
+  shutter_speed: MyString
+  iso: MyString
+  date_taken: 2025-05-02 22:27:57

@@ -1,0 +1,62 @@
+version: '3'
+
+tasks:
+  install:
+    desc: Install all dependencies for both Rails and React
+    cmds:
+      - bundle install
+      - cd client && npm install
+
+  install:client:
+    desc: Reinstall client dependencies
+    cmds:
+      - cd client && rm -rf node_modules package-lock.json && npm install
+
+  start:
+    desc: Start both Rails and React servers
+    cmds:
+      - ./start.sh
+
+  rails:
+    desc: Start only the Rails server
+    cmds:
+      - rails server
+
+  react:
+    desc: Start only the React development server
+    cmds:
+      - cd client && npm start
+
+  db:setup:
+    desc: Setup the database
+    cmds:
+      - rails db:create db:migrate
+
+  db:reset:
+    desc: Reset the database
+    cmds:
+      - rails db:drop db:create db:migrate
+
+  test:
+    desc: Run tests
+    cmds:
+      - rails test
+
+  lint:
+    desc: Run linters
+    cmds:
+      - bundle exec rubocop
+      - cd client && npm run lint
+
+  clean:
+    desc: Clean up temporary files and dependencies
+    cmds:
+      - rm -rf node_modules
+      - rm -rf client/node_modules
+      - rm -rf tmp/cache
+      - bundle clean --force
+
+  help:
+    desc: Show available tasks
+    cmds:
+      - task --list
