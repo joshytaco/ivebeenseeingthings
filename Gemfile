@@ -29,6 +29,9 @@ gem "image_processing", "~> 1.2"
 gem "aws-sdk-s3", require: false
 gem "aws-sdk-iam", require: false
 
+# Use JWT for authentication
+gem "jwt"
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS)
 gem "rack-cors"
 
