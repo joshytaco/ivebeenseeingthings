@@ -27,6 +27,7 @@ gem "image_processing", "~> 1.2"
 
 # Use AWS SDK for S3 storage
 gem "aws-sdk-s3", require: false
+gem "aws-sdk-iam", require: false
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS)
 gem "rack-cors"
