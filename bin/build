@@ -8,6 +8,8 @@ cd client
 
 # Use the npm from the Heroku Node.js buildpack
 export PATH="/app/.heroku/node/bin:$PATH"
+# Increase Node.js memory limit
+export NODE_OPTIONS="--max-old-space-size=2048"
 npm install
 npm run build
 cd ..
