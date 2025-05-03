@@ -137,6 +137,8 @@ GEM
       reline (>= 0.4.2)
     jmespath (1.6.2)
     json (2.11.3)
+    jwt (2.10.1)
+      base64
     kamal (2.5.3)
       activesupport (>= 7.0)
       base64 (~> 0.2)
@@ -350,6 +352,7 @@ DEPENDENCIES
   brakeman
   debug
   image_processing (~> 1.2)
+  jwt
   kamal
   pg (~> 1.1)
   puma (>= 6.4.0)
