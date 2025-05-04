@@ -1,0 +1,2 @@
+web: bin/build && bin/rails server -p ${PORT:-3000} -b 0.0.0.0
+release: bin/rails db:migrate 

@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Exit on error
+set -e
+
+echo "Building React app..."
+cd client
+
+# Use the npm from the Heroku Node.js buildpack
+export PATH="/app/.heroku/node/bin:$PATH"
+# Increase Node.js memory limit
+export NODE_OPTIONS="--max-old-space-size=2048"
+npm install
+npm run build
+cd ..
+
+echo "Copying React build to Rails public directory..."
+rm -rf public/*
+cp -r client/build/* public/
+
+echo "Build complete!" 
