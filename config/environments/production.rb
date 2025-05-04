@@ -47,7 +47,12 @@ Rails.application.configure do
   config.active_support.report_deprecations = false
 
   # Use Redis for caching
-  config.cache_store = :redis_cache_store, { url: ENV["REDIS_URL"] }
+  config.cache_store = :redis_cache_store, {
+    url: ENV.fetch("REDIS_URL"),
+    error_handler: ->(method:, returning:, exception:) {
+      Rails.logger.error "Redis cache error: #{exception.class}: #{exception.message}"
+    }
+  }
 
   # Use Sidekiq for Active Job
   config.active_job.queue_adapter = :async
